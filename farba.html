@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Oblicznie na podstawie powierzchni zapotrzebownaia na farbe</h1> 
+        podaj powierzchnię:
+    <input type="text" id="powierzchniaID"><br>
+    <input type="button" value="Policz" onclick="policz()"><br>
+    <p id="wynik"></p>
+    </div>
+    <script>
+        function policz() {
+           var powierzchniaString = document.getElementById('powierzchniaID').value;
+           var powierzchniaFloat = parseFloat(powierzchniaString);
+           var iloscWiader = powierzchniaFloat / 4; //z ułamkiem
+           var iloscPelnychWiader = Math.ceil(iloscWiader); //zaokraglowe w gore
+           var miejsceNaTekst = document.getElementById('wynik');
+           var tekst = "Liczba puszek farby: " + iloscPelnychWiader; 
+           miejsceNaTekst.innerHTML = tekst;
+        }
+    </script>
+</body>
+</html>
